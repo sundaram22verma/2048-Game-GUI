@@ -42,7 +42,7 @@ Make sure you have Node.js (v18 or newer) and a package manager like npm or yarn
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/sundaram22verma/Game-GUI.git
+    git clone https://github.com/sundaram22verma/2048-Game-GUI.git
     cd Game-GUI
     ```
 
