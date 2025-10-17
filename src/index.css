@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 45 15% 95%;
+    --foreground: 20 14% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 14% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14% 20%;
+
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 45 100% 60%;
+    --secondary-foreground: 20 14% 20%;
+
+    --muted: 45 15% 90%;
+    --muted-foreground: 25 5% 45%;
+
+    --accent: 35 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 45 15% 85%;
+    --input: 45 15% 85%;
+    --ring: 25 95% 53%;
+
+    --radius: 0.75rem;
+
+    /* Game specific colors */
+    --game-bg: 40 15% 88%;
+    --board-bg: 45 20% 82%;
+    --empty-tile: 45 15% 90%;
+    
+    --tile-2: 0 0% 98%;
+    --tile-2-fg: 20 14% 20%;
+    
+    --tile-4: 0 0% 96%;
+    --tile-4-fg: 20 14% 20%;
+    
+    --tile-8: 30 90% 65%;
+    --tile-8-fg: 0 0% 100%;
+    
+    --tile-16: 25 95% 60%;
+    --tile-16-fg: 0 0% 100%;
+    
+    --tile-32: 20 100% 55%;
+    --tile-32-fg: 0 0% 100%;
+    
+    --tile-64: 15 100% 50%;
+    --tile-64-fg: 0 0% 100%;
+    
+    --tile-128: 50 100% 55%;
+    --tile-128-fg: 0 0% 100%;
+    
+    --tile-256: 50 100% 50%;
+    --tile-256-fg: 0 0% 100%;
+    
+    --tile-512: 45 100% 48%;
+    --tile-512-fg: 0 0% 100%;
+    
+    --tile-1024: 40 100% 45%;
+    --tile-1024-fg: 0 0% 100%;
+    
+    --tile-2048: 35 100% 43%;
+    --tile-2048-fg: 0 0% 100%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+  }
+}
+
+@layer utilities {
+  .tile-slide {
+    transition: all 150ms ease-in-out;
+  }
+  
+  .tile-pop {
+    animation: pop 200ms ease-in-out;
+  }
+  
+  .tile-merge {
+    animation: merge 200ms ease-in-out;
+  }
+  
+  @keyframes pop {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes merge {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.15);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}
